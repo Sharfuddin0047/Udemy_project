@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start:dev": "nodemon --legacy-watch --env-file=.env.development src/index.js",
+    "docker:build": "docker build -t my-app/express-api:latest-dev .",
+    "docker:run": "docker run -p 3000:3000 -v \"%cd%\":/user/src/app --name api my-app/express-api:latest-dev",
+    "docker:stop": "docker stop api"
+  },
+  "keywords": [],
+  "author": "Sharfuddin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.16.0",
+    "nodemon": "^3.1.10",
+    "validate.js": "^0.13.1"
+  }
+}
